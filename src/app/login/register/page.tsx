@@ -1,6 +1,6 @@
 "use client";
 
-import CardInput from "@/app/login/cardLogin";
+import CardRegister from "./cardRegister";
 
 export default function Registrar() {
   return (
@@ -15,13 +15,7 @@ export default function Registrar() {
         ></iframe>
       </div>
       <div className="w-full h-full bg-[--cor-p] flex justify-center items-center">
-        <CardInput
-          logotitle="Insira suas credenciais para criar sua nova conta."
-          inputName={true}
-          showBtnsLow={false}
-          showBtnGoogle={false}
-          register={true}
-        />
+        <CardRegister logotitle="Insira suas credenciais para criar sua nova conta." />
       </div>
     </div>
   );

@@ -15,13 +15,7 @@ export default function Login() {
         ></iframe>
       </div>
       <div className="w-full h-full bg-[--cor-p] flex justify-center items-center">
-        <CardInput
-          logotitle="Insira suas credenciais para acessar sua conta."
-          inputName={false}
-          showBtnsLow={true}
-          showBtnGoogle={true}
-          register={false}
-        />
+        <CardInput logotitle="Insira suas credenciais para acessar sua conta." />
       </div>
     </div>
   );
