@@ -2,6 +2,7 @@
 
 import { motion, MotionProps, type AnimationProps } from "motion/react";
 import React from "react";
+import { cn } from "@/lib/utils";
 
 const animationProps = {
   initial: { "--x": "100%", scale: 0.8 },

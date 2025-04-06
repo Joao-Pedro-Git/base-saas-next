@@ -1,6 +1,6 @@
 "use client";
 
-import CardRegister from "./cardRegister";
+import CardRegister from "../components/cardRegister";
 
 export default function Registrar() {
   return (

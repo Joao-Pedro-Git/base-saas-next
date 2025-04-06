@@ -1,6 +1,6 @@
 "use server";
 
-import { auth } from "@/lib/auth";
+import { auth } from "../src/lib/auth";
 
 export const signIn = async () => {
   await auth.api.signInEmail({
@@ -11,12 +11,16 @@ export const signIn = async () => {
   });
 };
 
-export const signUp = async () => {
+export const signUp = async ({
+  name,
+  email,
+  senha,
+}: {
+  name: string;
+  email: string;
+  senha: string;
+}) => {
   await auth.api.signUpEmail({
-    body: {
-      email: "jptseste@test.com",
-      password: "password123s",
-      name: " Dev teste",
-    },
+    body: { name, email, password: senha },
   });
 };

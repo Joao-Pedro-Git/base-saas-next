@@ -1,6 +1,6 @@
 "use client";
 
-import CardInput from "./cardLogin";
+import CardInput from "./components/cardLogin";
 
 export default function Login() {
   return (

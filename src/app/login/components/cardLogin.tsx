@@ -19,28 +19,6 @@ export default function CardLogin(props) {
     window.location.href = "/login/register";
   }
 
-  // Function to validate the login
-  function validateLogin(e) {
-    if (e) event.preventDefault(); // Impede o comportamento padrão do botão
-
-    const password = document.getElementById("password").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const correctPassword = "123456";
-    const correctEmail = "joao@gmail.com";
-
-    if (!email || !password) {
-      alert("Preencha todos os campos");
-      return;
-    }
-
-    if (email === correctEmail && password === correctPassword) {
-      localStorage.setItem("token", "usuário_autenticado");
-      window.location.href = "/login/dashbord";
-    } else {
-      alert("Senha ou email incorretos");
-    }
-  }
-
   return (
     <>
       <Card className="relative w-[350px] overflow-hidden">
@@ -90,7 +68,7 @@ export default function CardLogin(props) {
           </Button>
 
           {/* Button outside the form but triggers login validation */}
-          <Button onClick={validateLogin}>Entrar</Button>
+          <Button>Entrar</Button>
         </CardFooter>
 
         <BorderBeam

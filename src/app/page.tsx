@@ -1,3 +1,5 @@
+"use client";
+
 import HeaderTop from "../components/headerTop";
 
 export default function Home() {

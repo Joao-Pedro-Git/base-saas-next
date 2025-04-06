@@ -16,6 +16,7 @@ export default function HeaderTop(props) {
   function goLogin() {
     window.location.href = "/login";
   }
+
   return (
     <div className="w-screen h-16 flex items-center md:px-28 py-4 justify-between fixed headerTop bg-white dark:bg-[#09090B]">
       <div className="ml-4 md:w-auto px-4 bg-gray-100 dark:bg-black h-full rounded-full border-neutral-950 border-0 flex flex-shrink-0 ">
@@ -35,7 +36,6 @@ export default function HeaderTop(props) {
         <ShinyButton className="whitespace-nowrap flex" onClick={goLogin}>
           {props.btnMessage}
         </ShinyButton>
-
       </div>
     </div >
 
