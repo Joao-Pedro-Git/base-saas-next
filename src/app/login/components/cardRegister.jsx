@@ -82,10 +82,6 @@ export default function CardLogin(props) {
   }
 
 
-
-
-
-
   return (
     <Card className="relative w-[350px] overflow-hidden">
       <CardHeader>

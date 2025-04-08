@@ -11,7 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { BorderBeam } from "@/components/magicui/border-beam";
-import { FcGoogle } from "react-icons/fc";
+import AuthWithGoogle from "./googleAuth";
 
 export default function CardLogin(props) {
   // Function to go to register page
@@ -53,12 +53,7 @@ export default function CardLogin(props) {
         {/* Continue with Google */}
         <div className="w-screen h-10 py-2">
           <div className="flex items-center justify-center "></div>
-          <Button
-            className="bg-gray-50 absolute op-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[87%]"
-            variant="outline"
-          >
-            Continuar com <FcGoogle />
-          </Button>
+          <AuthWithGoogle destino="/dashboard" />
         </div>
 
         {/* BTNS register and Login */}
