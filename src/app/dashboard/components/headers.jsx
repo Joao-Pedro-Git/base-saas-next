@@ -8,7 +8,7 @@ export default function HeadersDashBoard(props) {
   return (
     <div className="w-screen h-[6vh] bg-red-50 flex px-2 md:px-24 justify-between">
       <div className="h-full w-12 flex justify-center items-center p-1">
-        <img className="rounded-full w-full h-full" src={props.imageUser} alt="user image" />
+        <img className="rounded-full w-full h-full" src={props.imgUser} alt="user image" />
       </div>
 
       <div className="flex items-center justify-center">

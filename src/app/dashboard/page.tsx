@@ -1,24 +1,58 @@
-import { auth } from "../../lib/auth";
-import { headers } from "next/headers";
+import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
-import HeaderDashBoard from "./components/headers";
+import { headers } from "next/headers";
+import HeadersDashBoard from "./components/headers";
+//? DashBoard shadcn components
+import { AppSidebar } from "@/components/app-sidebar";
+import { ChartAreaInteractive } from "@/components/chart-area-interactive";
+import { DataTable } from "@/components/data-table";
+import { SectionCards } from "@/components/section-cards";
+import { SiteHeader } from "@/components/site-header";
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
+import data from "./data.json";
 
-export default async function Dashboard(props: any) {
+export default async function DashBoard(props: any) {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
-
   if (!session || !session.user) {
     redirect("/login");
-    //? Ele faz o redirecionamento no servidor, antes de carregar a página. rápido e seguro.
   }
+
   const { user } = session;
-  return (
-    <div>
-      <HeaderDashBoard
-        imageUser={user.image || "imgDefaultUser.jpg"}
+
+  const header = () => {
+    return (
+      <HeadersDashBoard
         nameUser={user.name}
+        imgUser={user.image || "/imgDefaultUser.jpg"}
       />
-    </div>
+    );
+  };
+
+  return (
+    <>
+      <SidebarProvider>
+        <AppSidebar
+          nameUser={user.name}
+          userEmail={user.email}
+          userImage={user.image || "/imgDefaultUser.jpg"}
+        />
+        <SidebarInset>
+          <SiteHeader />
+          <div className="flex flex-1 flex-col">
+            <div className="@container/main flex flex-1 flex-col gap-2">
+              <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
+                <SectionCards />
+                <div className="px-4 lg:px-6">
+                  <ChartAreaInteractive />
+                </div>
+                <DataTable data={data} />
+              </div>
+            </div>
+          </div>
+        </SidebarInset>
+      </SidebarProvider>
+    </>
   );
 }
