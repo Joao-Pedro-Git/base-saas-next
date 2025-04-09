@@ -1,8 +1,9 @@
 import { auth } from "../../lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import HeaderDashBoard from "./components/headers";
 
-export default async function Dashboard() {
+export default async function Dashboard(props: any) {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
@@ -14,7 +15,10 @@ export default async function Dashboard() {
   const { user } = session;
   return (
     <div>
-      <h1>ola {user.name}</h1>
+      <HeaderDashBoard
+        imageUser={user.image || "imgDefaultUser.jpg"}
+        nameUser={user.name}
+      />
     </div>
   );
 }
