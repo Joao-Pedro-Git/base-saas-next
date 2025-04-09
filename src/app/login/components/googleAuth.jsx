@@ -28,7 +28,11 @@ export default function GoogleAuth({ destino, color = "border-black" }) {
       variant="outline"
       onClick={goLoginWithGoogle}
     >
-      Continuar com {loading ? <Spinner color={color} /> : <FcGoogle />}
+      {loading ? <Spinner color={color} /> : (
+        <>
+          Continuar com <FcGoogle />
+        </>
+      )}
     </Button>
   );
 }
