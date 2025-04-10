@@ -1,7 +1,6 @@
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { headers } from "next/headers";
-import HeadersDashBoard from "./components/headers";
 //? DashBoard shadcn components
 import { AppSidebar } from "@/components/app-sidebar";
 import { ChartAreaInteractive } from "@/components/chart-area-interactive";
@@ -20,15 +19,6 @@ export default async function DashBoard(props: any) {
   }
 
   const { user } = session;
-
-  const header = () => {
-    return (
-      <HeadersDashBoard
-        nameUser={user.name}
-        imgUser={user.image || "/imgDefaultUser.jpg"}
-      />
-    );
-  };
 
   return (
     <>

@@ -11,7 +11,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { BorderBeam } from "@/components/magicui/border-beam";
 import Spinner from "@/components/spinner";
+import { IoIosArrowBack } from "react-icons/io";
 import { useState } from "react";
+
 
 export default function CardLogin(props) {
   //? Estados inputs
@@ -131,9 +133,12 @@ export default function CardLogin(props) {
           </div>
           <p className="text-xs text-red-500 text-center">{error}</p>
 
-          <Button onClick={ValidateAndPost} className="w-full">
-            {loading ? <Spinner /> : "Registrar"}
-          </Button>
+          <div className="flex flex-row gap-1">
+            <Button type="button" onClick={() => window.location.href = "/login"} className="w-9"><IoIosArrowBack /></Button>
+            <Button onClick={ValidateAndPost} className="w-full">
+              {loading ? <Spinner /> : "Registrar"}
+            </Button>
+          </div>
         </form>
       </CardContent>
 
