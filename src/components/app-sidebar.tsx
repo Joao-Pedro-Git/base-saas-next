@@ -18,7 +18,7 @@ import {
   SettingsIcon,
   UsersIcon,
 } from "lucide-react";
-
+import { FaRegNoteSticky } from "react-icons/fa6";
 import { NavDocuments } from "@/components/nav-documents";
 import { NavMain } from "@/components/nav-main";
 import { NavSecondary } from "@/components/nav-secondary";
@@ -32,8 +32,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
-
-import Image from "next/image";
 
 const data = {
   user: {
@@ -148,6 +146,11 @@ const data = {
       name: "Word Assistant",
       url: "#",
       icon: FileIcon,
+    },
+    {
+      name: "Notes",
+      url: "dashboard/screens/notes",
+      icon: FaRegNoteSticky,
     },
   ],
 };
