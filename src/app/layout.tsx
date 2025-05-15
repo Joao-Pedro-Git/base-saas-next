@@ -22,6 +22,7 @@ export default function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <link rel="canonical" href="https://jpdeveloper.online" />
+        <script src="https://sdk.mercadopago.com/js/v2"></script>
       </head>
       <body>{children}</body>
     </html>
